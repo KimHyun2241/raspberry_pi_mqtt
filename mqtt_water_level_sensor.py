@@ -6,6 +6,7 @@ import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 GPIO.cleanup()
 GPIO.setwarnings(False)
+
 # water level sensor
 pin_num_1 = 4
 pin_num_2 = 14
