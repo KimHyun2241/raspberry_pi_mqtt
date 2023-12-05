@@ -45,8 +45,8 @@ def update_leds(LED):
 
 	elif LED == "water_level_30" :
 		level_state[2] = 0
-	led_on_off()		
-	
+	led_on_off()
+
 def led_on_off():
 	if level_state == [0, 0, 0]:
 		print("수위 낮음, all led off" )
@@ -127,12 +127,12 @@ client.on_log = on_log
 client.connect('localhost', 1883, 60)
 
 client.loop_start()
-client.subscribe ("water_level_1" ,0 )
-client.subscribe ("water_level_2" ,0 )
-client.subscribe ("water_level_3" ,0 )
- 
+client.subscribe ("water_level_1" ,0)
+client.subscribe ("water_level_2" ,0)
+client.subscribe ("water_level_3" ,0)
+
 run = True
-	
+
 while run:
 	water_level_1, water_level_2, water_level_3 = \
 	 GPIO.input(pin_num_1), GPIO.input(pin_num_2), GPIO.input(pin_num_3)
@@ -144,7 +144,7 @@ while run:
 		print("water level 1:", water_level_1)  
 		print("water level 2:", water_level_2)
 		print("water level 3:", water_level_3)
-		time.sleep(3)
+		time.sleep(1)
 	else:
 		print('Failed to get reading. Try again!')	
 		sleep(10)
